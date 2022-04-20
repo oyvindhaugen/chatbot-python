@@ -31,8 +31,9 @@ def light_mode():
     btn_send.config(bg="#d3d3d3", foreground="black")
 def send():
     txt_history.configure(state=NORMAL)
-    txt_history.insert(END, "\n" + test)
+    txt_history.insert(END, "\nYou->" + ent_message.get())
     txt_history.configure(state=DISABLED)
+    ent_message.delete("1.0", END)
 def clear():
     txt_history.configure(state=NORMAL)
     txt_history.delete("1.0", END)
@@ -47,7 +48,7 @@ window.config(menu=menu_main)
 
 txt_history = Text(window, bg="#d3d3d3", font=("Bahnschrift", 12), foreground="black")
 txt_history.place(x=6, y=6, height=500, width=489)
-test = "Bot-> Hi, my name is Bot! What is yours?"
+test = "Bot-> Hi, my name is Bot! What can I help you with today?"
 txt_history.insert(END, test)
 txt_history.configure(state=DISABLED)
 
